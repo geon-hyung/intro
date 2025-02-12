@@ -1,50 +1,58 @@
 <!doctype html>
 <html lang="ko">
 <head>
-	<title>온라인 프로필</title>
-	<meta charset="utf-8">
+    <title>온라인 프로필</title>
+    <meta charset="utf-8">
   <style>
     table {
       width:70%; 
       border:1px solid #222; 
-      border-collapse: collapse; 
+      border-collapse: collapse;  
+      background-color: #ccc;
+      margin-top: 20px;
     }
     thead {
       background:blue;
       color: white;  
+      margin-left: 20px;
     }
     th, td {
       border:1px solid #ccc; 
       padding:5px;  
-      font-size:0.8em; 
+      font-size:0.8em;
+      margin-left: 20px;
+       
     }
     #container{
         width: 800px;
-        margin: 10px auto;   
+        margin: 10px auto;
+        
+           
     }
     #side{
         width: 250px;
         height: 650px;
-        background-color: yellow;
         float: left;
-        border-radius: 80%;
         font-style: italic;
+             
+        
     }
     #contents{
         width: 550px;
         height: 650px;
-        background-color:white;
+        background-size: cover;
         float: left;
+        
     }
-    #go{
+    #hak{
         width: 540px;
     }
     .subtitle{
         width: 540px;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 60%;
-        
+        border: 1px solid black;
+    }
+    body{
+       background-color: #ccc;
     }
   </style>
 </head>
@@ -54,7 +62,7 @@
         <!-- 사이드바 -->
         <div id="side">
             <div id="namecard">
-                <img style="border-radius: 60%;" src="media/jarong2.jpg" width="250px">
+                <img style="border-radius: 60%;" src="media/jarong.jpg" width="250px">
                 <h1>재롱</h1>    
                 <p>프로그래밍 재밌다</p>
             </div>
@@ -112,7 +120,7 @@
             <section>
                 <h2 class="subtitle">Education</h2>
                 <table>
-                  <caption id="go">학력 사항</caption>
+                  <caption id="hak"><h1>학력 사항</h1></caption>
                   <thead>
                       <tr>
                           <th>출신학교 </th>
@@ -139,5 +147,16 @@
             </section>
         </div>        
     </div>
+    <div id="time"></div>
 </body>
 </html>
+<script>
+setInterval(()=>{ //특정 주기별로 함수를 실행시킬 수 있는 것이다 
+    let datetime = new Date();
+    let time = 
+            datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()
+    let obj = document.querySelector("#time");
+    obj.innerHTML = time;
+},1000);
+
+</script>
