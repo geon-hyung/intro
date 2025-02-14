@@ -61,16 +61,14 @@
         
     }
     #hak{
-    #hak{
         width: 540px;
     }
     .subtitle{
         width: 540px;
-        border: 1px solid black;
     }
     body{
        background-color: #ccc;
-        border: 1px solid black;
+        
     }
     body{
        background-color: #ccc;
@@ -83,7 +81,7 @@
         <!-- 사이드바 -->
         <div id="side">
             <div id="namecard">
-                <img style="border-radius: 60%;" src="media/jarong.jpg" width="250px">
+
                 <img style="border-radius: 60%;" src="media/jarong.jpg" width="250px">
                 <h1>재롱</h1>    
                 <p>프로그래밍 재밌다</p>
@@ -104,12 +102,14 @@
         <div id="contents">
             <section>
                 <h2 class="subtitle">자기소개</h2>
+                <hr>
                 <p>프로그래밍에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
             </section>
 
             <!-- 경력 -->
             <section>
                 <h2 class="subtitle">Experience</h2>
+                <hr>
                 <ul>
                     <li>프론트엔드
                         <ul>
@@ -130,6 +130,7 @@
             <!-- 숙련도 -->
             <section>
                 <h2 class="subtitle">보유 기술</h2>
+                <hr>
                 <li style="list-style: none;"> 
                     <ul>
                         <li>자바 </li>
@@ -141,8 +142,8 @@
             <!-- 학력 -->
             <section>
                 <h2 class="subtitle">Education</h2>
+                <hr>
                 <table>
-                  <caption id="hak"><h1>학력 사항</h1></caption>
                   <caption id="hak"><h1>학력 사항</h1></caption>
                   <thead>
                       <tr>
@@ -171,7 +172,6 @@
         </div>        
     </div>
     <div id="time"></div>
-    <div id="time"></div>
 </body>
 </html>
 <script>
@@ -184,13 +184,6 @@ setInterval(()=>{ //특정 주기별로 함수를 실행시킬 수 있는 것이
 },1000);
    
 </script>
-<script>
-setInterval(()=>{ //특정 주기별로 함수를 실행시킬 수 있는 것이다 
-    let datetime = new Date();
-    let time = 
-            datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()
-    let obj = document.querySelector("#time");
-    obj.innerHTML = time;
-},1000);
+
 
 </script>
