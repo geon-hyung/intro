@@ -8,7 +8,7 @@
       width:70%; 
       border:1px solid #222; 
       border-collapse: collapse;  
-      background-color: #ccc;
+      background-color:gray;
       margin-top: 20px;
     }
     thead {
@@ -44,13 +44,12 @@
     #hak{
         width: 540px;
     }
-    .subtitle{
-        width: 540px;
-    }
-    body{
-       background-color: #ccc;
-        
-    }
+    .dark-mode {
+  	 	background-color: black;
+   		color: white;
+	}
+    
+
 
   </style>
 </head>
@@ -61,24 +60,24 @@
         <div id="side">
             <div id="namecard">
 
-                <img style="border-radius: 60%;" src="media/jarong.jpg" width="250px">
-                <h1>재롱</h1>    
-                <p>프로그래밍 재밌다</p>
+                 <img  id="jarong" style="border-radius: 60%;" src="media/jarong.jpg" width="240px">
+                <h1 style="text-align: center;">재롱</h1>    
             </div>
             <div id="detail">
                 <p>Incheon, Korea</p>
                 <p>test@naver.com</p>
-                <p><img src="media/phone.png" width="20px">phone : 010-2222-2222</p>
-                                                   
+                <p><img  src="media/phone.png" width="20px">phone : 010-2222-2222</p>
+                
             </div>
             <div id="sns">
                 <h2>SNS</h2>
-               <a href="#"><img src="media/ins.jpg" width="30px"></a> 
-                <a href="#"><img src="media/facebook.jpg" width="30px"></a>
-                <a href="#"><img src="media/git.png" width ="30px"></a>
+               <a href="https://www.instagram.com"><img src="media/ins.jpg" width="30px"></a> 
+                <a href="https://www.facebook.comm"><img src="media/facebook.jpg" width="30px"></a>
+                <a href="https://www.github.com"><img src="media/git.png" width ="30px"></a>
             </div>           
         </div>
         <div id="contents">
+            <div><button class="material-symbols-outlined" onclick="darkMode()" id="button">Dark Mode</button></div>
             <section>
                 <h2 class="subtitle">자기소개</h2>
                 <hr>
@@ -87,7 +86,7 @@
 
             <!-- 경력 -->
             <section>
-                <h2 class="subtitle">Experience</h2>
+                <h2>Experience</h2>
                 <hr>
                 <ul>
                     <li>프론트엔드
@@ -108,7 +107,7 @@
 
             <!-- 숙련도 -->
             <section>
-                <h2 class="subtitle">보유 기술</h2>
+                <h2>보유 기술</h2>
                 <hr>
                 <li style="list-style: none;"> 
                     <ul>
@@ -120,7 +119,7 @@
 
             <!-- 학력 -->
             <section>
-                <h2 class="subtitle">Education</h2>
+                <h2>Education</h2>
                 <hr>
                 <table>
                   <caption id="hak"><h1>학력 사항</h1></caption>
@@ -150,19 +149,46 @@
             </section>
         </div>        
     </div>
-    <div id="time"></div>
 </body>
 </html>
 <script>
-setInterval(()=>{ //특정 주기별로 함수를 실행시킬 수 있는 것이다 
-    let datetime = new Date();
-    let time = 
-            datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds()
-    let obj = document.querySelector("#time");
-    obj.innerHTML = time;
-},1000);
-   
-</script>
+let img = document.querySelector("#jarong");
+    img.addEventListener("mouseover",()=>{
+        img.src = "media/jarong2.jpg";
+    }); 
+    img.addEventListener("mouseout",()=>{
+        img.src = "media/jarong.jpg";
+    });
 
+    function darkMode() {
+    var body = document.body;
+    body.classList.toggle("dark-mode")
+     // 버튼 클릭시 버튼 text 변경
+     var button = document.getElementById("button");
+    if(button.innerHTML == "Dark Mode") {
+        button.innerHTML = "Light Mode";
+    } else {
+        button.innerHTML = "Dark Mode";
+    }
+	// 버튼 클릭시 카드 색상 변경
+    var card_dog = document.getElementById("card1");
+    if (card_dog.style.backgroundColor == 'lightblue') {
+        card_dog.style.backgroundColor = 'white';
+    } else {
+        card_dog.style.backgroundColor = 'lightblue';
+    }
+    var card_dog = document.getElementById("card2");
+    if (card_dog.style.backgroundColor == 'lightblue') {
+        card_dog.style.backgroundColor = 'white';
+    } else {
+        card_dog.style.backgroundColor = 'lightblue';
+    }
+    var card_dog = document.getElementById("card3");
+    if (card_dog.style.backgroundColor == 'lightblue') {
+        card_dog.style.backgroundColor = 'white';
+    } else {
+        card_dog.style.backgroundColor = 'lightblue';
+    }
+} 
 
 </script>
